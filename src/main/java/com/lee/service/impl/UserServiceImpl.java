@@ -14,19 +14,19 @@ import com.lee.service.UserService;
 @Transactional
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+	@Autowired
+	private UserMapper userMapper;
 
-    @Override
-    public User findUser(long userId) {
-        List<User> users = userMapper.queryAll();
-        User resultUser = null;
-        for (User user : users) {
-            if (user.getUserId() == userId) {
-                resultUser = user;
-            }
-        }
-        return resultUser;
-    }
+	@Override
+	public User findUser(long userId) {
+		List<User> users = userMapper.queryAll();
+		User resultUser = null;
+		for (User user : users) {
+			if (user.getUserId() == userId) {
+				resultUser = user;
+			}
+		}
+		return resultUser;
+	}
 
 }
